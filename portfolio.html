@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <style>
+        .textarea-section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 2px solid #333;
+  background-color: wheat;
+  border-radius: 8px;
+}
+.textarea-section h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.textarea-section ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.textarea-section li {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.textarea-section li h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.textarea-section li img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #333;
+}
+        .hidden {
+            display: none;
+        }
+        .more-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .more-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <body style="background-color:#FFFFCC;">
+        <h1 style="color:blue;">Frank Qiu's Personal homepage-Portfolio</h1>
+        <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Homepage&profile</a></li>
+          <li><a href="portfolio.html">Portfolio</li>
+          <li><a href="design.html">design process</li>
+          <li><a href="goal.html">Global Goal</li>
+          <li><a href="behind.html">What's behind</a></li>
+        </ul>
+      </nav>
+      <section class="textarea-section">
+        <h2>My Hobbies</h2>
+        <ul>
+            <li id="hobby1" class="hidden">
+                <h3>Swimming</h3>
+                <img src="images/swimpic.jpg" alt="Swimming">
+            </li>
+            <li id="hobby2" class="hidden">
+                <h3>Gaming</h3>
+                <img src="images/Gamingpic.jfif" alt="Gaming">
+            </li>
+            <li id="hobby3" class="hidden">
+                <h3>Programming</h3>
+                <img src="images/programmingpic.PNG" alt="Programming">
+            </li>
+        </ul>
+        <button class="more-button" onclick="showNextHobby()">Click for More</button>
+    </section>
+
+</body>
+
+
+<script>
+    let currentHobbyIndex = 0;
+    const hobbies = [
+        document.getElementById('hobby1'),
+        document.getElementById('hobby2'),
+        document.getElementById('hobby3')
+    ];
+    const moreButton = document.querySelector('.more-button');
+
+    function showNextHobby() {
+        if (currentHobbyIndex < hobbies.length) {
+            hobbies[currentHobbyIndex].classList.remove('hidden');
+            currentHobbyIndex++;
+        }
+        if (currentHobbyIndex >= hobbies.length) {
+            moreButton.classList.add('hidden'); // 隐藏按钮
+        }
+    }
+</script>
